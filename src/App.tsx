@@ -9,7 +9,7 @@ function App () {
     <>
       <Route path="/" component={Home} />
       <Route path="/arma-tu-plan" component={BuildYourPlan} />
-      <Route path="/thanks" component={Thanks} />
+      <Route path="/gracias" component={Thanks} />
     </>
   )
 }

@@ -1,4 +1,3 @@
-// hook to handle fetch
 import { useState } from 'react'
 import { type UserType } from '../../../models/UserType'
 import { getUserByDocument } from '../../../services/user-service'

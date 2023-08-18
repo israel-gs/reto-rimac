@@ -41,9 +41,12 @@ export default function DocumentInput ({ onChange, error }: DocumentInputProps) 
   return (
     <div className="form-group">
       <div className={`document-input__container ${error !== '' ? 'document-input__items-container--error' : ''}`}>
-        <button className="document-input__select" type='button' onClick={() => {
-          setExpanded(!expanded)
-        }}>
+        <button
+          className="document-input__select"
+          type='button'
+          onClick={() => {
+            setExpanded(!expanded)
+          }}>
           {selectedDocument.label}
 
           <svg className={`document-input__select-arrow ${expanded ? 'document-input__select-arrow--up' : ''}`} xmlns="http://www.w3.org/2000/svg" width="17" height="18" viewBox="0 0 17 18" fill="none">
