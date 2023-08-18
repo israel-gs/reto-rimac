@@ -1,12 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './index.css'
 
-export default function TermsCheck () {
+interface TermsCheckProps {
+  onChange: (value: boolean) => void
+}
+
+export default function TermsCheck ({ onChange }: TermsCheckProps) {
   const [isChecked, setIsChecked] = useState(false)
 
   const handleCheck = () => {
     setIsChecked(!isChecked)
   }
+
+  useEffect(() => {
+    onChange(isChecked)
+  }, [isChecked])
 
   return (
     <div className="terms-check__container" onClick={handleCheck}>

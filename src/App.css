@@ -49,6 +49,11 @@ html {
   border: 1px solid var(--red-rimacr-500-cta);
 }
 
+.input__error-container {
+  color: var(--red-rimacr-500-cta);
+  font-size: 0.75rem;
+}
+
 .input-placeholder {
   color: var(--neutrals-n-500);
   left: 1rem;
@@ -77,6 +82,11 @@ input[type=text]:focus ~ .input-placeholder {
   margin-bottom: 0;
 }
 
+.document-input__error-container {
+  color: var(--red-rimacr-500-cta);
+  font-size: 0.75rem;
+}
+
 .document-input__select {
   box-sizing: border-box;
   border-radius: 4px 0 0 4px;
@@ -95,7 +105,7 @@ input[type=text]:focus ~ .input-placeholder {
 .document-input__select-arrow {
   width: 1rem;
   height: 1rem;
-  transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1),opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),-webkit-transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: transform 100ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .document-input__select-arrow--up {
@@ -115,6 +125,11 @@ input[type=text]:focus ~ .input-placeholder {
   width: 100%;
   border-radius: 4px;
   transition: opacity 500ms cubic-bezier(0.4, 0, 0.2, 1),-webkit-transform 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.document-input__items-container--error {
+  border: 1px solid var(--red-rimacr-500-cta);
+  border-radius: 5px;
 }
 
 .document-input__items-container--hidden {
