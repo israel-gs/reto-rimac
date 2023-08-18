@@ -1,5 +1,6 @@
 import { type FormEvent } from 'react'
 import { useForm } from '../../hooks/useForm'
+import { useUser } from '../../hooks/useUser'
 import CellphoneInput from '../cellphone-input'
 import DocumentInput from '../document-input'
 import PlateInput from '../plate-input'
@@ -8,20 +9,29 @@ import './index.css'
 
 export default function Form () {
   const {
+    document,
     setDocument,
+    documentValue,
     setDocumentValue,
+    cellphoneValue,
     setCellphoneValue,
+    plateValue,
     setPlateValue,
     setTermsChecked,
     documentError,
     cellphoneError,
     plateError,
-    handleSubmit: onSubmit
+    validateForm
   } = useForm()
+
+  const { loading, fetchUser, user } = useUser()
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    onSubmit()
+    const formValid = validateForm()
+    if (formValid) {
+      fetchUser(documentValue, document?.value ?? '')
+    }
   }
 
   return (

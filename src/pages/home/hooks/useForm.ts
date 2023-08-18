@@ -12,24 +12,33 @@ export const useForm = () => {
   const [plateError, setPlateError] = useState<string>('')
   const [termsChecked, setTermsChecked] = useState(false)
 
-  const handleSubmit = () => {
+  const validateForm = () => {
+    let documentError = ''
+    let cellphoneError = ''
+    let plateError = ''
     if (document && documentValue.length < document.length) {
-      setDocumentError('Debe seleccionar un tipo de documento')
+      documentError = 'Debe seleccionar un tipo de documento'
     } else {
-      setDocumentError('')
+      documentError = ''
     }
 
     if (cellphoneValue.length < cellphoneMaxLength) {
-      setCellphoneError(`El celular debe tener ${cellphoneMaxLength} caracteres`)
+      cellphoneError = `El celular debe tener ${cellphoneMaxLength} caracteres`
     } else {
-      setCellphoneError('')
+      cellphoneError = ''
     }
 
     if (plateValue.length < plateMaxLength) {
-      setPlateError(`La placa debe tener ${plateMaxLength} caracteres`)
+      plateError = `La placa debe tener ${plateMaxLength} caracteres`
     } else {
-      setPlateError('')
+      plateError = ''
     }
+
+    setDocumentError(documentError)
+    setCellphoneError(cellphoneError)
+    setPlateError(plateError)
+
+    return !(documentError || cellphoneError || plateError)
   }
 
   return {
@@ -46,6 +55,6 @@ export const useForm = () => {
     documentError,
     cellphoneError,
     plateError,
-    handleSubmit
+    validateForm
   }
 }
