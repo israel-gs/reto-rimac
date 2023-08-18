@@ -1,0 +1,33 @@
+.home__container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home__left {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.home__right {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  .home__container {
+    flex-direction: row;
+  }
+
+  .home__left {
+    width: 40%;
+    height: 100vh;
+  }
+
+  .home__right {
+    width: 60%;
+    height: 100vh;
+  }
+}
