@@ -1,4 +1,5 @@
 import { type FormEvent } from 'react'
+import Button from '../../../../components/button'
 import { useForm } from '../../hooks/useForm'
 import { useUser } from '../../hooks/useUser'
 import CellphoneInput from '../cellphone-input'
@@ -43,7 +44,7 @@ export default function Form () {
             setDocument(document)
             setDocumentValue(value)
           }}
-         error={documentError}
+          error={documentError}
         />
         <CellphoneInput
           onChange={(value) => {
@@ -62,7 +63,9 @@ export default function Form () {
             setTermsChecked(value)
           }}
         />
-        <button className="w-full primary-button" type="submit">Cotízalo</button>
+        <Button className="w-full" type="submit" loading={loading}>
+          Cotízalo
+        </Button>
       </form>
     </section>
   )

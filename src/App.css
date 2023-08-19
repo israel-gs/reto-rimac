@@ -15,22 +15,6 @@ html {
   font-family: 'Lato', sans-serif;
 }
 
-.primary-button {
-  background-color: var(--red-rimacr-500-cta) !important;
-  border: none;
-  border-radius: .5rem;
-  color: var(--neutrals-n-0);
-  font-style: normal;
-  font-weight: 700;
-  padding: 1.25rem 2rem;
-  text-transform: uppercase;
-  transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.primary-button:hover {
-  background-color: var(--red-rimacr-500-cta-hover) !important;
-}
-
 .form-group {
   margin-bottom: 1rem;
   position: relative;
@@ -137,6 +121,7 @@ input[type=text]:focus ~ .input-placeholder {
 }
 
 .document-input__item {
+  display: flex;
   padding: 1rem;
   cursor: pointer;
   transition: background-color 100ms cubic-bezier(0.4, 0, 0.2, 1);
