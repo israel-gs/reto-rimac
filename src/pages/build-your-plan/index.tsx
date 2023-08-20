@@ -7,7 +7,7 @@ export default function BuildYourPlan () {
 
   return (
     <div>
-      <Header />
+      <Header hasBorder />
       {
         JSON.stringify(user)
       }

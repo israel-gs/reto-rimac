@@ -9,6 +9,10 @@
   width: 100%;
 }
 
+.header--bordered {
+  border-bottom: 1px solid var(--neutrals-n-400);
+}
+
 @media (min-width: 768px) {
   .header {
     padding: 1.5rem 7.5rem;

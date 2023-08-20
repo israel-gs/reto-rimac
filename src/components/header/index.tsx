@@ -1,9 +1,13 @@
 import CallButton from '../call-button'
 import './index.css'
 
-export default function Header () {
+interface HeaderProps {
+  hasBorder?: boolean
+}
+
+export default function Header ({ hasBorder = false }: HeaderProps) {
   return (
-    <header className='header'>
+    <header className={`header ${hasBorder ? 'header--bordered' : ''}`}>
       <svg xmlns="http://www.w3.org/2000/svg" width="99" height="16" viewBox="0 0 99 16" fill="none">
         <path d="M56.2886 0C55.3834 0 54.7046 0.252366 53.9692 1.21136L44.8046 12.3155L41.2971 1.46372C40.9011 0.353312 40.1091 0 39.3737 0C38.2423 0 37.6766 0.403785 37.1109 1.36278L29.0211 15.7981H33.5469L39.0343 5.85489L42.4286 15.7981H46.2189L54.4783 5.90536L54.4217 15.7981H58.2686L58.212 1.91798C58.212 0.555205 57.2503 0.0504732 56.2886 0Z" fill="#FF1C44" />
         <path d="M23.5903 2.57413L19.9697 15.7981H24.0994L27.6634 2.57413H23.5903Z" fill="#FF1C44" />
