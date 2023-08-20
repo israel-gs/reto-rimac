@@ -1,6 +1,7 @@
-import { useEffect, type FormEvent } from 'react'
+import { useContext, useEffect, type FormEvent } from 'react'
 import { useLocation } from 'wouter'
 import Button from '../../../../components/button'
+import { GlobalContext } from '../../../../context/global'
 import { useForm } from '../../hooks/useForm'
 import { useUser } from '../../hooks/useUser'
 import CellphoneInput from '../cellphone-input'
@@ -15,7 +16,6 @@ export default function Form () {
     setDocument,
     documentValue,
     setDocumentValue,
-    cellphoneValue,
     setCellphoneValue,
     plateValue,
     setPlateValue,
@@ -26,9 +26,11 @@ export default function Form () {
     validateForm
   } = useForm()
 
+  const [, navigate] = useLocation()
+
   const { loading, fetchUser, user } = useUser()
 
-  const [location, navigate] = useLocation()
+  const { setUser, setPlate } = useContext(GlobalContext)
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -40,6 +42,8 @@ export default function Form () {
 
   useEffect(() => {
     if (user) {
+      setUser(user)
+      setPlate(plateValue)
       navigate('/arma-tu-plan')
     }
   }, [user])
