@@ -1,4 +1,5 @@
-import { type FormEvent } from 'react'
+import { useEffect, type FormEvent } from 'react'
+import { useLocation } from 'wouter'
 import Button from '../../../../components/button'
 import { useForm } from '../../hooks/useForm'
 import { useUser } from '../../hooks/useUser'
@@ -27,6 +28,8 @@ export default function Form () {
 
   const { loading, fetchUser, user } = useUser()
 
+  const [location, navigate] = useLocation()
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     const formValid = validateForm()
@@ -34,6 +37,12 @@ export default function Form () {
       fetchUser(documentValue, document?.value ?? '')
     }
   }
+
+  useEffect(() => {
+    if (user) {
+      navigate('/arma-tu-plan')
+    }
+  }, [user])
 
   return (
     <section className="form" onSubmit={handleSubmit}>
