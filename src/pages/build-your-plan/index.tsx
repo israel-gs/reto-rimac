@@ -1,3 +1,4 @@
+import Header from '@components/header'
 import { useContext } from 'react'
 import { GlobalContext } from '../../context/global'
 
@@ -6,6 +7,7 @@ export default function BuildYourPlan () {
 
   return (
     <div>
+      <Header />
       {
         JSON.stringify(user)
       }

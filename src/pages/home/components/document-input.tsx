@@ -1,6 +1,6 @@
+import { type DocumentType } from '@models/DocumentType'
 import { useClickAway } from '@uidotdev/usehooks'
 import { useEffect, useState, type ChangeEvent } from 'react'
-import { type DocumentType } from '../../../models/DocumentType'
 
 const documentTypes: DocumentType[] = [
   { value: 'dni', label: 'DNI', length: 8, regex: /^\d{0,8}$/ },

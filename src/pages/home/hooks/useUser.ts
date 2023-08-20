@@ -1,6 +1,6 @@
+import { type UserType } from '@models/UserType'
+import { getUserByDocument } from '@services/user-service'
 import { useState } from 'react'
-import { type UserType } from '../../../models/UserType'
-import { getUserByDocument } from '../../../services/user-service'
 
 export const useUser = () => {
   const [user, setUser] = useState<UserType | null>(null)

@@ -1,11 +1,11 @@
-import HeroDesktop from '../../../../assets/hero_desktop.svg'
-import HeroMobile from '../../../../assets/hero_mobile.svg'
+import HeroDesktop from '@assets/hero_desktop.svg'
+import HeroMobile from '@assets/hero_mobile.svg'
 import './index.css'
 
 export default function Hero () {
   return (
     <section className="hero__container">
-      <img className="hero__image hidden md:inline" src={HeroDesktop} alt="hero" />
+      <img className="hidden hero__image md:inline" src={HeroDesktop} alt="hero" />
       <div className='hero__text-container'>
         <p className="hero__new-tag">¡NUEVO!</p>
         <h1 className="hero__title">

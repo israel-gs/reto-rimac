@@ -1,4 +1,4 @@
-import { type UserType } from '../models/UserType'
+import { type UserType } from '@models/UserType'
 
 export const getUserByDocument = async (document: string, documentType: string): Promise<UserType> => {
   try {

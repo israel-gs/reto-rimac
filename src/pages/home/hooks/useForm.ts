@@ -1,5 +1,5 @@
+import { type DocumentType } from '@models/DocumentType'
 import { useState } from 'react'
-import { type DocumentType } from '../../../models/DocumentType'
 import { cellphoneMaxLength, plateMaxLength } from '../constants/form-constants'
 
 export const useForm = () => {
