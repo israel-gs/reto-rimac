@@ -2,6 +2,7 @@ import Button from '@components/button'
 import { GlobalContext } from '@context/global'
 import { currencyFormat } from '@utils/utils'
 import { useContext } from 'react'
+import { useLocation } from 'wouter'
 import Divider from '../divider'
 import './index.css'
 
@@ -13,6 +14,11 @@ const priceIncludes = [
 
 export default function Total () {
   const { amount } = useContext(GlobalContext)
+  const [, navigate] = useLocation()
+
+  const handleOnClick = () => {
+    navigate('/gracias')
+  }
 
   return (
     <div className='total__main-container'>
@@ -42,7 +48,7 @@ export default function Total () {
         </ul>
       </div>
       <div className='w-full'>
-        <Button className='w-full'>LO QUIERO</Button>
+        <Button className='w-full' onClick={handleOnClick}>LO QUIERO</Button>
       </div>
     </div>
   )
