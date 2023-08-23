@@ -8,6 +8,7 @@ import CarInfoCard from './components/car-info-card'
 import Coverages from './components/coverages'
 import Divider from './components/divider'
 import PriceSelector from './components/price-selector'
+import Total from './components/total'
 import './index.css'
 
 export default function BuildYourPlan () {
@@ -57,7 +58,9 @@ export default function BuildYourPlan () {
             <Coverages />
           </div>
         </div>
-        <div className='d'></div>
+        <div className='d'>
+          <Total />
+        </div>
       </div>
     </div>
   )
