@@ -11,13 +11,17 @@ import PriceSelector from './components/price-selector'
 import './index.css'
 
 export default function BuildYourPlan () {
-  const { user, plate } = useContext(GlobalContext)
+  const { user, plate, setInsuredAmount } = useContext(GlobalContext)
   const [, navigate] = useLocation()
 
   const handleGoBack = () => {
     navigate('/', {
       replace: true
     })
+  }
+
+  const handleInsuredAmountChange = (amount: number) => {
+    setInsuredAmount(amount)
   }
 
   return (
@@ -43,7 +47,7 @@ export default function BuildYourPlan () {
               max={16_500}
               increment={100}
               currency='$'
-              onChange={(value) => { console.log(value) }}
+              onChange={handleInsuredAmountChange}
             />
           </div>
           <div className='divider__container'>

@@ -1,5 +1,5 @@
 import { currencyFormat } from '@utils/utils'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './index.css'
 
 interface PriceSelectorProps {
@@ -16,16 +16,18 @@ export default function PriceSelector ({ min, max, onChange, increment, currency
   const increase = () => {
     if (value + increment <= max) {
       setValue(value + increment)
-      onChange(value + increment)
     }
   }
 
   const decrease = () => {
     if (value - increment >= min) {
       setValue(value - increment)
-      onChange(value - increment)
     }
   }
+
+  useEffect(() => {
+    onChange(value)
+  }, [value])
 
   return (
     <div className='price-selector__container'>
