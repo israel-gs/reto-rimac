@@ -2,6 +2,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .home__left {
@@ -19,6 +20,7 @@
 @media (min-width: 768px) {
   .home__container {
     flex-direction: row;
+    margin-bottom: 0;
   }
 
   .home__left {
